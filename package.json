@@ -1,6 +1,6 @@
 {
-  "name": "json-bigint",
-  "version": "1.0.0",
+  "name": "@metowolf/json-bigint",
+  "version": "1.0.1",
   "description": "JSON.parse with bigints support",
   "main": "index.js",
   "files": [
@@ -22,7 +22,7 @@
     "parse",
     "json"
   ],
-  "author": "Andrey Sidorov <andrey.sidorov@gmail.com>",
+  "author": "metowolf <i@i-meto.com>",
   "license": "MIT",
   "dependencies": {
     "bignumber.js": "^9.0.0"

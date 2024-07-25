@@ -32,6 +32,12 @@ describe('__proto__ and constructor assignment', function () {
     ).to.throw('Object contains forbidden prototype property');
   });
 
+  it('should not throw exception if protoAction set to error and there is a substring __proto__ property', () => {
+    const JSONbig = makeJSON({ protoAction: 'error' });
+    const obj1 = JSONbig.parse('{ "a__proto__": 1000000000000000 }');
+    expect(obj1).to.deep.equal({ a__proto__: 1000000000000000 });
+  });
+
   it('should throw an exception if constructorAction set to error and there is constructor property', () => {
     const JSONbig = makeJSON({ protoAction: 'error' });
     expect(() => JSONbig.parse('{ "constructor": 1000000000000000 }')).to.throw(
